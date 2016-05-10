@@ -101,26 +101,6 @@ def get_operand_group(x):
 		return 3
 	return 4
 
-'''
-def get_operand_group(x): 
-	if x == 0:
-		return 0
-	if x == 1:
-		return 1
-	if x < 10:
-		return 2
-	if x == 10:
-		return 3
-	if x % 10 == 0:
-		return 4
-	if x % 5 == 0:
-		return 5
-	if x < 20:
-		return 6
-	if x < 50:
-		return 7
-	return 8
-'''
 
 def is_first_smaller(row):
 	if row.op1 < row.op2:
