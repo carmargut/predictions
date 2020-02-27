@@ -65,7 +65,7 @@ def is_easy(row): #ampliar
 	if row.op == '*' and (row.op1 == 0 or row.op2 == 0):
 		return 1
 	return 0
-	
+
 def is_difficult(row): #ampliar
 	if row.op == '-' and row.op1 > row.op2:
 		return 1
@@ -74,7 +74,7 @@ def is_difficult(row): #ampliar
 	return 0
 
 #0 muy facil - 4 muy dificil
-def get_difficulty(row): 
+def get_difficulty(row):
 	if row.op == '*':
 		if row.op1 == 1 or row.op2 == 1:
 			return 0
@@ -90,7 +90,7 @@ def get_difficulty(row):
 	return 2
 
 
-def get_operand_group(x): 
+def get_operand_group(x):
 	if x == 0:
 		return 0
 	if x == 1:
@@ -101,6 +101,26 @@ def get_operand_group(x):
 		return 3
 	return 4
 
+'''
+def get_operand_group(x):
+	if x == 0:
+		return 0
+	if x == 1:
+		return 1
+	if x < 10:
+		return 2
+	if x == 10:
+		return 3
+	if x % 10 == 0:
+		return 4
+	if x % 5 == 0:
+		return 5
+	if x < 20:
+		return 6
+	if x < 50:
+		return 7
+	return 8
+'''
 
 def is_first_smaller(row):
 	if row.op1 < row.op2:
@@ -164,7 +184,7 @@ print(scores.mean())
 app = Flask(__name__)
 
 # Cargo el modelo que he entrenado previamente.
-#regr = joblib.load('filename.pkl') 
+#regr = joblib.load('filename.pkl')
 
 
 @app.route("/")
